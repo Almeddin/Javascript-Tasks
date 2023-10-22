@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <!-- <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>4</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>6</td>
+            <td>9</td>
+        </tr>
+    </table> -->
+    <script>
+        // let table = document.createElement("table")
+        // document.body.append(table)
+        // for( let a = 1; a < 11; a++){
+        //    let tr = document.createElement("tr")
+        //    for(let b = 1; b < 11; b++){
+        //         let td = document.createElement("td")
+        //         td.innerHTML = b * a
+        //         tr.append(td)
+        //     }
+        //     table.append(tr)
+        // }
+        const arr = [
+            "SM-M",
+            "M-KM",
+            "SM-KM"
+        ]
+        let div = document.createElement("div")
+        let input1 = document.createElement("input")
+        input1.type = "number"
+        let select = document.createElement("select")
+        for(let i = 0; i< arr.length; i++){
+            let option = document.createElement("option")
+            option.append(arr[i])
+            select.append(option)
+        }
+        // let option1 = document.createElement("option")
+        // option1.append("SM-M")
+        // let option2 = document.createElement("option")
+        // option2.append("M-KM")
+        // let option3 = document.createElement("option")
+        // option3.append("SM-KM")
+        // select.append(option1, option2, option3)
+        let input2 = document.createElement("input")
+        input2.type = "number"
+        document.body.append(input1, select, input2)
+
+        input1.addEventListener("input", function () {
+            converter(input2, input1, "/")
+            // if (select.value == "SM-M") {
+            //     input2.value = input1.value / 100
+            // }
+            // else if (select.value == "M-KM") {
+            //     input2.value = input1.value / 1000
+            // }
+            // else {
+            //     input2.value = input1.value / 100000
+            // }
+        })
+        // input1.addEventListener("focus", function(){
+        //     input1.style.border = "10px solid red"
+        // })
+        // input1.addEventListener("blur", function(){
+        //     input1.style.border = "none"
+        // })
+        input2.addEventListener("input", function () {
+            converter(input1, input2, "*")
+            // if (select.value == "SM-M") {
+            //     input1.value = input2.value * 100
+            // }
+            // else if (select.value == "M-KM") {
+            //     input1.value = input2.value * 1000
+            // }
+            // else {
+            //     input1.value = input2.value * 100000
+            // }
+        })
+        select.addEventListener("change", function () {
+            converter(input1, input2, "*")
+            // if (select.value == "SM-M") {
+            //     input1.value = input2.value * 100
+            // }
+            // else if (select.value == "M-KM") {
+            //     input1.value = input2.value * 1000
+            // }
+            // else {
+            //     input1.value = input2.value * 100000
+            // }
+        })
+
+        function converter (main, helper, operator){
+              if (select.value == "SM-M") {
+                  if(operator == "*"){
+                    main.value = helper.value * 100
+                }
+                else {
+                    main.value = helper.value / 100   
+                }
+            }
+            else if (select.value == "M-KM") {
+                if(operator == "*"){
+                    main.value = helper.value * 1000
+                }
+                else {
+                    main.value = helper.value / 1000  
+                }
+            }
+            else {
+                if(operator == "*"){
+                    main.value = helper.value * 100000
+                }
+                else {
+                    main.value = helper.value / 100000
+                }
+            }  
+        }
+
+
+
+    </script>
+</body>
+
+</html>

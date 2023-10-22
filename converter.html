@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let input1 = document.createElement("input")
+        let select = document.createElement("select")
+        // let option1 = document.createElement("option")
+        // option1.innerHTML = "SM-M"
+        // let option2 = document.createElement("option")
+        // option2.innerHTML = "M-KM"
+        // let option3 = document.createElement("option")
+        // option3.innerHTML = "SM-KM"
+        // select.append(option1, option2, option3)
+        const optionlar = [
+            "SM-M",
+            "M-KM",
+            "SM-KM",
+        ]
+        for (let i = 0; i < optionlar.length; i++) {
+            let option = document.createElement("option")
+            select.append(option)
+            option.innerHTML = optionlar[i]
+        }
+        let input2 = document.createElement("input")
+
+
+        input2.addEventListener("input", function () {
+           converter(input1, input2, "*")
+            // if(select.value == "SM-M"){
+            //     input1.value = input2.value * 100
+            // }
+            // else if(select.value == "M-KM"){
+            //     input1.value = input2.value * 1000
+            // }
+            // else{
+            //     input1.value = input2.value * 10000
+            // }
+        })
+
+        input1.addEventListener("input", function () {
+           converter(input2, input1, "/")
+            // if(select.value == "SM-M"){
+            //     input2.value = input1.value / 100
+            // }
+            // else if(select.value == "M-KM"){
+            //     input2.value = input1.value / 1000
+            // }
+            // else{
+            //     input2.value = input1.value / 10000
+            // }
+        })
+         
+        select.addEventListener("change", function(){
+            converter(input2, input1, "/")
+            // if(select.value == "SM-M"){
+            //     input1.value = input2.value * 100
+            // }
+            // else if(select.value == "M-KM"){
+            //     input1.value = input2.value * 1000
+            // }
+            // else{
+            //     input1.value = input2.value * 10000
+            // }
+        })
+        function converter(birinci, ikinci, operator){
+            if(select.value == "SM-M"){
+                if(operator == "*"){
+                    birinci.value = ikinci.value * 100
+                }
+                else{
+                    birinci.value = ikinci.value / 100
+                }
+            }
+            else if(select.value == "M-KM"){
+                if(operator == "*"){
+                    birinci.value = ikinci.value * 1000
+                }
+                else{
+                    birinci.value = ikinci.value / 1000
+                }
+            }
+            else{
+                if(operator == "*"){
+                    birinci.value = ikinci.value * 10000
+                }
+                else{
+                    birinci.value = ikinci.value / 10000
+                }
+            }
+        }
+
+
+        document.body.append(input1, select, input2)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 600px;
+            /* display: flex;
+            align-items: flex-end;
+            justify-content: flex-end; */
+        }
+        #circle{
+            width: 150px;
+            height: 150px;
+            background-color: black;
+            border-radius: 50%;
+            margin-bottom:20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="circle" style="position:absolute;"></div>
+    <div style="margin-left:40%;">
+        <button id="up" onclick="up()">Up</button>
+        <button id="down" onclick="down()">Down</button>
+        <button id="left" onclick ="left()">Left</button>
+        <button id="right" onclick="right()">Right</button>
+    </div>
+    <script>
+              let move = 0;
+              const element = document.getElementById("circle")
+        // document.getElementById("daire").style.postion = "absolute"
+        function right(){
+            element.style.right = move 
+            if (element.style.left == amove+ "px"){
+                element.style.removeProperty("left")
+            }
+
+        }
+        function left(){
+            element.style.left = move 
+            if (element.style.right == move + "px"){
+                element.style.removeProperty("right")
+            }
+        }
+        function down(){
+            element.style.bottom = move 
+            if (element.style.top == move + "px"){
+                element.style.removeProperty("top")
+            }
+        }
+        function up(){
+            element.style.top = move 
+            if (element.style.bottom == move + "px"){
+                element.style.removeProperty("bottom")
+            }
+        }
+    </script>
+    
+</body>
+</html>

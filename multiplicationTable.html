@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <table>
+        <tr>
+            <td>x</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>2</td>
+            <td>4</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>3</td>
+            <td>6</td>
+            <td>9</td>
+        </tr>
+        
+    </table> -->
+
+    
+
+    <!-- <div id="numbers">
+        <p>salam</p>
+    </div> -->
+
+    <script>
+        // let nums = document.getElementById("numbers")
+        // for(let a = 1; a > 0 && a < 10; a++ ){
+        //     if(a % 2 == 0){
+        //         nums.innerHTML =  nums.innerHTML + "<strong>" + a + "</strong>"
+        //     }
+            
+        // }
+        let body = document.body
+        let table = document.createElement("table")
+
+        let firstRow = document.createElement("tr")
+        let a = 1, b = 1, aTo = 11, bTo = 11
+        for(a = 1; a > 0 && a < aTo; a++){
+            let firstLine = document.createElement("td");
+            let tableRow = document.createElement("tr")
+            if(a == 1){
+                firstLine.innerHTML = "x"
+            }
+            else{
+                firstLine.innerHTML = a - 1
+            }
+            firstRow.append(firstLine)
+            // x 1 2 3 4 ... 9 10
+            tableRow.innerHTML = '<td>' + a + '</td>'
+            for(b = 1; b > 0 && b < bTo; b++){
+                let tableData = document.createElement("td")
+                tableData.innerHTML = a * b
+                tableRow.append(tableData)
+            }   
+            table.append(tableRow)
+        }
+        let lastLine = document.createElement("td");
+        lastLine.innerHTML = aTo - 1
+        firstRow.append(lastLine)
+        table.prepend(firstRow)
+        body.append(table)
+    </script>
+</body>
+</html>

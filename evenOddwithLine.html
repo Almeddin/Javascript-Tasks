@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="alishka">
+    <button id="calculate" onclick="press()">Calculate</button>
+    <div id="even"></div>
+    <div id="odd"></div>
+    <script>
+        const number = document.getElementById("alishka")
+        const button = document.getElementById("calculate")
+        const even = document.getElementById("even")
+        const tek = document.getElementById("odd")
+
+        function press() {
+            even.innerHTML = ""
+            odd.innerHTML = ""
+            let inputNumber = number.value
+            
+            for (let i = inputNumber; i >= 0; i = i - 1) {
+                if (i != 31 && i != 0) {
+                    if (i % 2 == 1) {
+                        odd.innerHTML = odd.innerHTML + "<span>" + i + "</span>" + " "
+                    }
+                    else  {
+                        even.innerHTML = even.innerHTML + "<span>" + i + "</span>" + " "
+                    }
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

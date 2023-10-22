@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input-1" type="number">
+    <input type="number" id="input-2">
+    <button id="button" onclick="press()">Calculate</button>
+    <div id="result">
+
+    </div>
+    
+    
+    <script>
+        const number_1 = document.getElementById("input-1")
+        const number_2 = document.getElementById("input-2")
+        const ergebniss = document.getElementById("result")
+
+
+        function press(){
+            ergebniss.innerHTML = ""
+            if(number_1.value && number_2.value ){
+                ergebniss.innerHTML = Math.sqrt((number_1.value**2) + (number_2.value**2))
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>

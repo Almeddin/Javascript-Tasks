@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #main{
+            width: 100%;
+            height: 500px;
+            background-color: burlywood;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #buton{
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            color:white;
+            font-size:20px;
+        }
+        #back{
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            color:white;
+            font-size:20px;
+            z-index: 9999; 
+        }
+        #main p{
+            font-size:40px;
+            color:blue;
+        }
+        #hidden{
+            background-color: blue;
+            opacity: 0.5;
+            transition: all ease-in-out 2s;
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            top:0;
+            left:-100%;
+        }
+        #hidden a{
+            font-size: 30px;
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <p>Welcome to my world!</p>
+        <button id="buton" onclick="press()">Click me!</button>
+    </div>
+    <div id="hidden">
+        <a>Lorem ipsum dolor sit amet.</a><br>
+        <a>Lorem ipsum dolor sit amet.</a><br>
+        <a>Lorem ipsum dolor sit amet.</a><br>
+        <button id="back" onclick="backToMain()" >Back to Main</button>
+    </div>
+    <script>
+        const firstDiv = document.getElementById("main")
+        const secondDiv = document.getElementById("hidden")
+        const button = document.getElementById("buton")
+
+        function press(){
+            secondDiv.style.left = "0"
+        }
+        function backToMain(){
+            secondDiv.style.left = "-100%"
+        }
+
+    </script>
+</body>
+</html>
